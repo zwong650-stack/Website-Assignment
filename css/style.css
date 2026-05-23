@@ -980,27 +980,6 @@ table { border-collapse:collapse; width:100%; }
 }
 .contact-item-text a:hover { color:var(--solar-400); }
 
-.social-row {
-  display:flex; gap:10px; margin-top:28px;
-  padding-top:24px;
-  border-top:1px solid rgba(255,255,255,.1);
-}
-.social-link {
-  width:40px; height:40px;
-  display:flex; align-items:center; justify-content:center;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:10px;
-  color:#fff;
-  transition:background .2s, border-color .2s, transform .15s;
-}
-.social-link:hover {
-  background:rgba(250,204,21,.15);
-  border-color:rgba(250,204,21,.4);
-  transform:translateY(-3px);
-  color:var(--solar-400);
-}
-.social-link .ms { font-size:20px; }
 
 .contact-form-card {
   background:#fff; border:1px solid var(--line);
