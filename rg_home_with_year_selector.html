@@ -15,50 +15,22 @@
 
   <!-- Page-scoped palette: emerald #10B981 (primary), navy #0F172A (secondary), yellow #FACC15 (accent) -->
   <style>
-    /* Clean white page; navy navbar for strong contrast and a modern sustainability feel */
+    /* Home page inherits the shared Solaris theme (white navbar, yellow accent,
+       yellow buttons). Only the full-bleed image hero needs page-specific tuning. */
     body { background:#ffffff; }
-    .navbar {
-      background:#0F172A;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .navbar.scrolled {
-      background:rgba(15,23,42,.88);
-      backdrop-filter:blur(20px);
-      -webkit-backdrop-filter:blur(20px);
-      box-shadow:0 1px 0 rgba(255,255,255,.04), 0 8px 32px rgba(15,23,42,.35);
-    }
-    /* Light navbar text on dark navbar */
-    .navbar .logo { color:#ffffff; }
-    .navbar .nav-link { color:rgba(255,255,255,.78); }
-    .navbar .nav-link:hover { color:#ffffff; }
-    .navbar .nav-link.active { color:#FACC15; }
-    .navbar .hamburger span { background:#ffffff; }
-    /* Logo mark — emerald with yellow sun for the sustainability + solar feel */
-    .navbar .logo-mark {
-      background:linear-gradient(135deg,#10B981 0%,#34D399 100%);
-      color:#0F172A;
-      box-shadow:0 4px 14px rgba(16,185,129,.45);
-    }
-    /* Navbar primary CTA — yellow accent for the "Take Action" pill */
-    .navbar .nav-actions .btn-primary {
-      background:#FACC15;
-      color:#0F172A;
-      box-shadow:0 6px 18px rgba(250,204,21,.35);
-    }
-    .navbar .nav-actions .btn-primary:hover {
-      background:#fbd72a;
-      box-shadow:0 8px 22px rgba(250,204,21,.45);
-    }
 
-    /* Hero — navy → emerald gradient overlay (readable, vibrant, on-brand) */
+    /* Hero overlay — dark navy fading to a soft green edge (on-brand) */
     .image-hero .hero-overlay {
       background:linear-gradient(
         115deg,
         rgba(15,23,42,.94) 0%,
-        rgba(15,23,42,.82) 45%,
-        rgba(16,185,129,.55) 100%
+        rgba(15,23,42,.80) 45%,
+        rgba(16,185,129,.42) 100%
       );
     }
+    /* Soft yellow + green halos on the dark hero */
+    .image-hero .hero-orb-a { background:rgba(250,204,21,.18); }
+    .image-hero .hero-orb-b { background:rgba(16,185,129,.22); }
 
     /* Pill badge — yellow outline + yellow text (solar accent on dark) */
     .image-hero .hero-badge {
@@ -72,25 +44,14 @@
     .image-hero h1 { color:#ffffff; }
     .image-hero .lead { color:rgba(255,255,255,.88); }
 
-    /* Accent phrase — yellow → emerald gradient ties the whole palette together */
+    /* Accent phrase — yellow → green gradient ties the palette together */
     .image-hero h1 .accent {
       background:linear-gradient(90deg,#FACC15 0%,#FDE047 35%,#34D399 100%);
       -webkit-background-clip:text; background-clip:text;
       -webkit-text-fill-color:transparent; color:transparent;
     }
 
-    /* Primary CTA — emerald with white text (the renewable-energy signal color) */
-    .image-hero .btn-primary {
-      background:#10B981;
-      color:#ffffff;
-      box-shadow:0 8px 24px rgba(16,185,129,.45);
-    }
-    .image-hero .btn-primary:hover {
-      background:#0ea371;
-      box-shadow:0 10px 28px rgba(16,185,129,.55);
-    }
-
-    /* Ghost CTA — white outline + white text on the dark hero */
+    /* Ghost CTA — white outline on the dark hero (primary CTA stays shared yellow) */
     .image-hero .btn-ghost {
       background:transparent;
       border:1.5px solid rgba(255,255,255,.85);
@@ -101,10 +62,6 @@
       border-color:#ffffff;
       color:#ffffff;
     }
-
-    /* Hero orbs — soft emerald + yellow halos */
-    .image-hero .hero-orb-a { background:rgba(250,204,21,.18); }
-    .image-hero .hero-orb-b { background:rgba(16,185,129,.22); }
 
     /* Scroll hint readable on dark hero */
     .image-hero .scroll-hint { color:rgba(255,255,255,.85); }
