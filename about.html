@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0f172a"/>
+  <title>About SDG 7 | Solaris — Affordable and Clean Energy</title>
+  <meta name="description" content="Learn what UN Sustainable Development Goal 7 is, the global energy challenges we face, and how solar energy provides a practical solution."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="rg_home_with_year_selector.html" class="logo" aria-label="Solaris home">
+        <span class="logo-mark"><span class="ms" aria-hidden="true">wb_sunny</span></span>
+        Solaris
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="rg_home_with_year_selector.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About SDG 7</a>
+        <a href="solar.html" class="nav-link">Solar Energy</a>
+        <a href="solutions.html" class="nav-link">Take Action</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="solutions.html" class="btn-primary" style="font-size:13px;padding:10px 22px;">Take Action</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE DRAWER ===== -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <div class="drawer-head">
+      <strong>Menu</strong>
+      <button onclick="closeMenu()" aria-label="Close menu" style="color:#475569;"><span class="ms">close</span></button>
+    </div>
+    <nav class="drawer-nav" aria-label="Mobile primary">
+      <a href="rg_home_with_year_selector.html" onclick="closeMenu()">Home</a>
+      <a href="about.html" class="active" onclick="closeMenu()">About SDG 7</a>
+      <a href="solar.html" onclick="closeMenu()">Solar Energy</a>
+      <a href="solutions.html" onclick="closeMenu()">Take Action</a>
+      <a href="contact.html" onclick="closeMenu()">Contact</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero" aria-labelledby="hero-title">
+      <span class="hero-orb hero-orb-a drifting" aria-hidden="true"></span>
+      <span class="hero-orb hero-orb-b drifting" aria-hidden="true" style="animation-delay:-4s;"></span>
+      <div class="container hero-inner">
+        <p class="crumbs" aria-label="Breadcrumb">
+          <a href="rg_home_with_year_selector.html">Home</a>
+          <span class="ms" aria-hidden="true">chevron_right</span>
+          <span>About SDG 7</span>
+        </p>
+        <p class="hero-badge"><span class="dot" aria-hidden="true"></span> United Nations Goal 7</p>
+        <h1 id="hero-title">
+          Understanding <span class="accent">Affordable and Clean Energy</span> for Everyone
+        </h1>
+        <p class="lead">
+          SDG 7 calls on every country, community, and individual to make energy
+          affordable, reliable, sustainable, and modern. This page explains the goal,
+          the challenges, and how solar power leads the way.
+        </p>
+        <div class="hero-actions">
+          <a href="#challenges" class="btn-primary">
+            See the Challenges
+            <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_downward</span>
+          </a>
+          <a href="solar.html" class="btn-ghost">Solar Energy Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KEY FACTS STRIP ===== -->
+    <section class="section section--dark" aria-labelledby="facts-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Global Picture</p>
+          <h2 class="section-title" id="facts-title">Energy at a Glance</h2>
+          <p class="section-body">A few numbers that explain why SDG 7 matters right now.</p>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-card reveal d1">
+            <div class="stat-icon"><span class="ms" aria-hidden="true">groups</span></div>
+            <span class="stat-value" data-target="685" data-suffix="M">0</span>
+            <h3>People without electricity</h3>
+            <p>Mostly in rural and underserved regions worldwide.</p>
+          </article>
+          <article class="stat-card reveal d2">
+            <div class="stat-icon"><span class="ms" aria-hidden="true">soup_kitchen</span></div>
+            <span class="stat-value" data-target="2.1" data-suffix="B" data-decimals="1">0</span>
+            <h3>Lack clean cooking fuels</h3>
+            <p>Still relying on wood, kerosene or charcoal for daily meals.</p>
+          </article>
+          <article class="stat-card reveal d3">
+            <div class="stat-icon"><span class="ms" aria-hidden="true">co2</span></div>
+            <span class="stat-value" data-target="73" data-suffix="%">0</span>
+            <h3>Of greenhouse gas emissions</h3>
+            <p>Come from how we produce and use energy globally.</p>
+          </article>
+          <article class="stat-card reveal d4">
+            <div class="stat-icon"><span class="ms" aria-hidden="true">solar_power</span></div>
+            <span class="stat-value" data-target="30" data-suffix="%">0</span>
+            <h3>Renewable share today</h3>
+            <p>Of global electricity, with solar growing fastest.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT IS SDG 7 ===== -->
+    <section class="section section--white" id="what-is" aria-labelledby="what-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Goal Overview</p>
+          <h2 class="section-title" id="what-title">What is SDG 7?</h2>
+          <p class="section-body">SDG 7 is one of 17 United Nations Sustainable Development Goals adopted in 2015 to be reached by 2030.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card reveal-l">
+            <div class="about-icon-row">
+              <div class="about-icon"><span class="ms" aria-hidden="true">lightbulb</span></div>
+              <h3>Affordable, Reliable, Sustainable, Modern</h3>
+            </div>
+            <p>
+              SDG 7 aims to ensure access to <strong>affordable, reliable, sustainable, and modern</strong>
+              energy services for every person on the planet. It recognises that energy is the foundation
+              of education, healthcare, employment, and human dignity.
+            </p>
+            <p>
+              The goal sets out three big targets by 2030: universal access to electricity and clean cooking,
+              a substantial increase in the share of renewable energy, and a doubling of the global rate of
+              improvement in energy efficiency.
+            </p>
+
+            <div class="about-points">
+              <div class="about-point">
+                <span class="ms" aria-hidden="true">check_circle</span>
+                <span><strong>Target 7.1</strong> &mdash; universal access to affordable, reliable energy services.</span>
+              </div>
+              <div class="about-point">
+                <span class="ms" aria-hidden="true">check_circle</span>
+                <span><strong>Target 7.2</strong> &mdash; substantially increase the share of renewables.</span>
+              </div>
+              <div class="about-point">
+                <span class="ms" aria-hidden="true">check_circle</span>
+                <span><strong>Target 7.3</strong> &mdash; double the rate of energy-efficiency improvement.</span>
+              </div>
+              <div class="about-point">
+                <span class="ms" aria-hidden="true">check_circle</span>
+                <span><strong>Target 7.A &amp; 7.B</strong> &mdash; boost clean-energy R&amp;D and infrastructure in developing nations.</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="about-card dark reveal-r">
+            <div class="about-icon-row">
+              <div class="about-icon green"><span class="ms" aria-hidden="true">school</span></div>
+              <h3>Why It Matters to All of Us</h3>
+            </div>
+            <p>
+              Clean and affordable energy is not just an environmental goal &mdash; it is a quality-of-life
+              goal. It powers classrooms, clinics, businesses, and the digital tools we use every day.
+            </p>
+            <p>
+              When students like us understand SDG 7, we can help spread awareness, encourage
+              clean-energy choices, and adopt simple habits that reduce energy waste at home and in
+              our communities.
+            </p>
+
+            <div class="about-points">
+              <div class="about-point">
+                <span class="ms" aria-hidden="true">menu_book</span>
+                <span>Powers <strong>education</strong> &mdash; lighting, internet, and devices for learning.</span>
+              </div>
+              <div class="about-point">
+                <span class="ms" aria-hidden="true">local_hospital</span>
+                <span>Supports <strong>healthcare</strong> &mdash; vaccines, equipment, emergency response.</span>
+              </div>
+              <div class="about-point">
+                <span class="ms" aria-hidden="true">storefront</span>
+                <span>Enables <strong>jobs &amp; business</strong> &mdash; shops, services, online work, agriculture.</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHALLENGES ===== -->
+    <section class="section section--surface" id="challenges" aria-labelledby="challenges-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Key Issues</p>
+          <h2 class="section-title" id="challenges-title">The Energy Challenges We Face</h2>
+          <p class="section-body">These barriers prevent the world from achieving SDG 7 &mdash; and each one connects directly to the case for solar.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card t-alert reveal d1">
+            <div class="card-icon"><span class="ms" aria-hidden="true">power_off</span></div>
+            <h3>Unequal Access to Electricity</h3>
+            <p>Hundreds of millions of people in rural and underserved communities still lack reliable electricity, which limits education, healthcare, and economic opportunity.</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Solar mini-grids reach where the grid cannot.</div>
+          </article>
+
+          <article class="card t-warn reveal d2">
+            <div class="card-icon"><span class="ms" aria-hidden="true">local_gas_station</span></div>
+            <h3>Reliance on Fossil Fuels</h3>
+            <p>Coal, oil, and gas dominate global supply. They drive greenhouse-gas emissions, air pollution, and price shocks whenever fuel markets become volatile.</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Solar produces zero direct emissions.</div>
+          </article>
+
+          <article class="card t-info reveal d3">
+            <div class="card-icon"><span class="ms" aria-hidden="true">psychology</span></div>
+            <h3>Low Awareness of Renewables</h3>
+            <p>Many households do not know how solar works, what it costs, or how energy efficiency saves money. Awareness gaps slow adoption and waste resources.</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Education unlocks demand and trust.</div>
+          </article>
+
+          <article class="card t-warn reveal d4">
+            <div class="card-icon"><span class="ms" aria-hidden="true">bolt</span></div>
+            <h3>Energy Waste &amp; High Bills</h3>
+            <p>Inefficient appliances, poor insulation, and standby power inflate household bills. Wasted electricity also wastes the fuel and emissions used to generate it.</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Efficiency is the cheapest energy of all.</div>
+          </article>
+
+          <article class="card t-alert reveal d5">
+            <div class="card-icon"><span class="ms" aria-hidden="true">public</span></div>
+            <h3>Climate Change Pressure</h3>
+            <p>Burning fossil fuels heats the planet, raises sea levels, and disrupts weather. Reaching SDG 7 directly supports SDG 13 (Climate Action).</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Clean energy is climate action.</div>
+          </article>
+
+          <article class="card t-info reveal d6">
+            <div class="card-icon"><span class="ms" aria-hidden="true">attach_money</span></div>
+            <h3>Affordability Gaps</h3>
+            <p>Up-front costs can put modern energy services out of reach for low-income households even where the grid is available.</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Solar costs have fallen ~90% since 2010.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section section--surface" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="cta-banner-text">
+            <h2 id="cta-title">Ready to learn how solar works?</h2>
+            <p>Visit our Solar Energy guide for a simple, visual walkthrough &mdash; from sunlight to your power socket &mdash; plus an interactive windmill animation and FAQ.</p>
+          </div>
+          <div class="cta-banner-actions">
+            <a href="solar.html" class="btn-secondary">
+              Explore Solar Energy
+              <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_forward</span>
+            </a>
+            <a href="solutions.html" class="btn-outline">View Take-Action Tips</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="rg_home_with_year_selector.html" class="logo">
+            <span class="logo-mark"><span class="ms" aria-hidden="true">wb_sunny</span></span>
+            Solaris
+          </a>
+          <p>A student-built awareness website supporting UN Sustainable Development Goal 7: Affordable and Clean Energy for all.</p>
+        </div>
+        <div class="foot-cols">
+          <div class="foot-col">
+            <h4>Site</h4>
+            <ul>
+              <li><a href="rg_home_with_year_selector.html">Home</a></li>
+              <li><a href="about.html">About SDG 7</a></li>
+              <li><a href="solar.html">Solar Energy</a></li>
+              <li><a href="solutions.html">Take Action</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>Project</h4>
+            <ul>
+              <li><a href="about.html">DIT1262 Web Design</a></li>
+              <li><a href="solutions.html">Energy Tips</a></li>
+              <li><a href="solutions.html#calc">Solar Calculator</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>Goal Targets</h4>
+            <ul>
+              <li><a href="#what-is">7.1 Universal Access</a></li>
+              <li><a href="#what-is">7.2 Renewables</a></li>
+              <li><a href="#what-is">7.3 Efficiency</a></li>
+              <li><a href="#what-is">7.A &amp; 7.B Investment</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>&copy; 2026 Solaris. Created for DIT1262 Web Design SDG 7 Group Project.</p>
+        <div class="meta">
+          <span class="ms" aria-hidden="true">wb_sunny</span>
+          Powered by clean solar awareness
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

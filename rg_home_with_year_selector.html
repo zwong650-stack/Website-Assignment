@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0f172a"/>
+  <title>Solaris | SDG 7 Affordable and Clean Energy</title>
+  <meta name="description" content="Solaris is a student-built awareness website for UN SDG 7: Affordable and Clean Energy. Learn about solar power, the energy challenges we face, and how to take action."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- Page-scoped palette: emerald #10B981 (primary), navy #0F172A (secondary), yellow #FACC15 (accent) -->
+  <style>
+    /* Clean white page; navy navbar for strong contrast and a modern sustainability feel */
+    body { background:#ffffff; }
+    .navbar {
+      background:#0F172A;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .navbar.scrolled {
+      background:rgba(15,23,42,.88);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      box-shadow:0 1px 0 rgba(255,255,255,.04), 0 8px 32px rgba(15,23,42,.35);
+    }
+    /* Light navbar text on dark navbar */
+    .navbar .logo { color:#ffffff; }
+    .navbar .nav-link { color:rgba(255,255,255,.78); }
+    .navbar .nav-link:hover { color:#ffffff; }
+    .navbar .nav-link.active { color:#FACC15; }
+    .navbar .hamburger span { background:#ffffff; }
+    /* Logo mark — emerald with yellow sun for the sustainability + solar feel */
+    .navbar .logo-mark {
+      background:linear-gradient(135deg,#10B981 0%,#34D399 100%);
+      color:#0F172A;
+      box-shadow:0 4px 14px rgba(16,185,129,.45);
+    }
+    /* Navbar primary CTA — yellow accent for the "Take Action" pill */
+    .navbar .nav-actions .btn-primary {
+      background:#FACC15;
+      color:#0F172A;
+      box-shadow:0 6px 18px rgba(250,204,21,.35);
+    }
+    .navbar .nav-actions .btn-primary:hover {
+      background:#fbd72a;
+      box-shadow:0 8px 22px rgba(250,204,21,.45);
+    }
+
+    /* Hero — navy → emerald gradient overlay (readable, vibrant, on-brand) */
+    .image-hero .hero-overlay {
+      background:linear-gradient(
+        115deg,
+        rgba(15,23,42,.94) 0%,
+        rgba(15,23,42,.82) 45%,
+        rgba(16,185,129,.55) 100%
+      );
+    }
+
+    /* Pill badge — yellow outline + yellow text (solar accent on dark) */
+    .image-hero .hero-badge {
+      background:rgba(15,23,42,.35);
+      border:1.5px solid rgba(250,204,21,.65);
+      color:#FACC15;
+    }
+    .image-hero .hero-badge .dot { background:#FACC15; }
+
+    /* Headline + lead — white on dark */
+    .image-hero h1 { color:#ffffff; }
+    .image-hero .lead { color:rgba(255,255,255,.88); }
+
+    /* Accent phrase — yellow → emerald gradient ties the whole palette together */
+    .image-hero h1 .accent {
+      background:linear-gradient(90deg,#FACC15 0%,#FDE047 35%,#34D399 100%);
+      -webkit-background-clip:text; background-clip:text;
+      -webkit-text-fill-color:transparent; color:transparent;
+    }
+
+    /* Primary CTA — emerald with white text (the renewable-energy signal color) */
+    .image-hero .btn-primary {
+      background:#10B981;
+      color:#ffffff;
+      box-shadow:0 8px 24px rgba(16,185,129,.45);
+    }
+    .image-hero .btn-primary:hover {
+      background:#0ea371;
+      box-shadow:0 10px 28px rgba(16,185,129,.55);
+    }
+
+    /* Ghost CTA — white outline + white text on the dark hero */
+    .image-hero .btn-ghost {
+      background:transparent;
+      border:1.5px solid rgba(255,255,255,.85);
+      color:#ffffff;
+    }
+    .image-hero .btn-ghost:hover {
+      background:rgba(255,255,255,.10);
+      border-color:#ffffff;
+      color:#ffffff;
+    }
+
+    /* Hero orbs — soft emerald + yellow halos */
+    .image-hero .hero-orb-a { background:rgba(250,204,21,.18); }
+    .image-hero .hero-orb-b { background:rgba(16,185,129,.22); }
+
+    /* Scroll hint readable on dark hero */
+    .image-hero .scroll-hint { color:rgba(255,255,255,.85); }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="rg_home_with_year_selector.html" class="logo" aria-label="Solaris home">
+        <span class="logo-mark"><span class="ms" aria-hidden="true">wb_sunny</span></span>
+        Solaris
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="rg_home_with_year_selector.html" class="nav-link active">Home</a>
+        <a href="about.html"     class="nav-link">About SDG 7</a>
+        <a href="solar.html"     class="nav-link">Solar Energy</a>
+        <a href="solutions.html" class="nav-link">Take Action</a>
+        <a href="contact.html"   class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="solutions.html" class="btn-primary" style="font-size:13px;padding:10px 22px;">Take Action</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE DRAWER ===== -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <div class="drawer-head">
+      <strong>Menu</strong>
+      <button onclick="closeMenu()" aria-label="Close menu" style="color:#475569;"><span class="ms">close</span></button>
+    </div>
+    <nav class="drawer-nav" aria-label="Mobile primary">
+      <a href="rg_home_with_year_selector.html" class="active" onclick="closeMenu()">Home</a>
+      <a href="about.html"     onclick="closeMenu()">About SDG 7</a>
+      <a href="solar.html"     onclick="closeMenu()">Solar Energy</a>
+      <a href="solutions.html" onclick="closeMenu()">Take Action</a>
+      <a href="contact.html"   onclick="closeMenu()">Contact</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="image-hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-bg">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxqdK3A5kvx8zyE7IIJsI8DlZwanh66l05zc3BHt3NcKENcc99G68OIyturxDMpTcTGA28v6QM8OSNRcZTbL6OVHcPBBYo62_KsyYjW1WEQO0AvK2uMvG9Vq6vSdAtHTyYg2FtUUdw5qLGb597tGo2uUNjgb6NQcJ5JStou0AA27wfrvb2jZ3x7GMDU1ee0VS-EeWt-dmBHNNSSf1Bl-bwTkGhqjcqKWAiF1l3yAHSaE3_ou3C4bryhBYLselPLjuWFUTedu_DAxg" alt="Wind farm at dusk representing clean renewable energy"/>
+        <div class="hero-overlay"></div>
+      </div>
+      <span class="hero-orb hero-orb-a drifting" aria-hidden="true"></span>
+      <span class="hero-orb hero-orb-b drifting" aria-hidden="true" style="animation-delay:-4s;"></span>
+
+      <div class="container hero-content">
+        <div class="hero-inner">
+          <p class="hero-badge">
+            <span class="dot" aria-hidden="true"></span>
+            UN Sustainable Development Goal 7
+          </p>
+          <h1 id="hero-title">
+            Affordable and Clean Energy for a <span class="accent">Sustainable Future</span>
+          </h1>
+          <p class="lead">
+            Solaris is a student-built awareness hub for SDG 7. We explain why
+            clean energy matters, how solar power works, and what each of us can
+            do to support the shift to a brighter, cleaner future.
+          </p>
+          <div class="hero-actions">
+            <a href="about.html" class="btn-primary">
+              Learn About SDG 7
+              <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_forward</span>
+            </a>
+            <a href="solar.html" class="btn-ghost">Explore Solar Energy</a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#focus" class="scroll-hint" aria-label="Scroll to next section">
+        <span>Scroll</span>
+        <span class="ms" aria-hidden="true" style="font-size:22px;">keyboard_arrow_down</span>
+      </a>
+    </section>
+
+    <!-- ===== SDG 7 FOCUS AREAS (overview only) ===== -->
+    <section class="section section--dark" id="focus" aria-labelledby="focus-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">The Goal at a Glance</p>
+          <h2 class="section-title" id="focus-title">Four Focus Areas of SDG 7</h2>
+          <p class="section-body">SDG 7 rests on four pillars that work together to deliver clean, affordable, modern energy for everyone.</p>
+        </div>
+        <div class="stats-grid stagger">
+          <article class="stat-card reveal d1">
+            <div class="stat-icon"><span class="ms" aria-hidden="true">power</span></div>
+            <h3>Energy Access</h3>
+            <p>Reliable, affordable electricity for every community &mdash; including rural and underserved areas.</p>
+          </article>
+          <article class="stat-card reveal d2">
+            <div class="stat-icon"><span class="ms" aria-hidden="true">solar_power</span></div>
+            <h3>Renewable Energy</h3>
+            <p>A bigger share of solar, wind, hydro and other clean sources in the world's energy mix.</p>
+          </article>
+          <article class="stat-card reveal d3">
+            <div class="stat-icon"><span class="ms" aria-hidden="true">eco</span></div>
+            <h3>Energy Efficiency</h3>
+            <p>Doing the same work with less energy &mdash; cutting waste, costs and emissions all at once.</p>
+          </article>
+          <article class="stat-card reveal d4">
+            <div class="stat-icon"><span class="ms" aria-hidden="true">science</span></div>
+            <h3>Clean Technology</h3>
+            <p>Modern, low-emission tech that supports a healthier planet for the next generations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPLORE THE SITE (page previews) ===== -->
+    <section class="section section--white" id="explore" aria-labelledby="explore-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Explore Solaris</p>
+          <h2 class="section-title" id="explore-title">Where to Go Next</h2>
+          <p class="section-body">Each page focuses on one part of the story. Pick where to start, or follow them in order.</p>
+        </div>
+
+        <div class="preview-grid">
+          <a href="about.html" class="preview-card reveal-up d1">
+            <div class="preview-thumb t-navy">
+              <span class="ms" aria-hidden="true">public</span>
+            </div>
+            <div class="preview-body">
+              <p class="preview-kicker">Page 01 &middot; Background</p>
+              <h3>About SDG 7</h3>
+              <p>What the goal is, what targets it sets, and the energy challenges that stand in the way of reaching it by 2030.</p>
+              <span class="preview-link">Read About SDG 7 <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_forward</span></span>
+            </div>
+          </a>
+
+          <a href="solar.html" class="preview-card t-solar reveal-up d2">
+            <div class="preview-thumb t-solar">
+              <span class="ms" aria-hidden="true">wb_sunny</span>
+            </div>
+            <div class="preview-body">
+              <p class="preview-kicker">Page 02 &middot; How It Works</p>
+              <h3>Solar Energy</h3>
+              <p>How solar panels turn sunlight into electricity, the benefits, a comparison with fossil fuels, and an interactive windmill.</p>
+              <span class="preview-link">Open Solar Guide <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_forward</span></span>
+            </div>
+          </a>
+
+          <a href="solutions.html" class="preview-card t-green reveal-up d3">
+            <div class="preview-thumb t-green">
+              <span class="ms" aria-hidden="true">savings</span>
+            </div>
+            <div class="preview-body">
+              <p class="preview-kicker">Page 03 &middot; Action</p>
+              <h3>Take Action</h3>
+              <p>An interactive solar calculator, daily energy-saving tips, a five-step action plan, and ideas tailored to students, homes &amp; communities.</p>
+              <span class="preview-link">Try the Calculator <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_forward</span></span>
+            </div>
+          </a>
+
+          <a href="contact.html" class="preview-card t-blue reveal-up d4">
+            <div class="preview-thumb t-blue">
+              <span class="ms" aria-hidden="true">forum</span>
+            </div>
+            <div class="preview-body">
+              <p class="preview-kicker">Page 04 &middot; Talk to Us</p>
+              <h3>Contact</h3>
+              <p>Drop the team a message, find our campus on the map, or follow our social channels for SDG 7 updates and campaign news.</p>
+              <span class="preview-link">Get in Touch <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_forward</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRESS / YEAR SELECTOR ===== -->
+    <section class="section section--surface" id="progress" aria-labelledby="progress-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Progress Over Time</p>
+          <h2 class="section-title" id="progress-title">Capacity Growth by Region</h2>
+          <p class="section-body">See how renewable energy and SDG 7 awareness have grown over the past decade. Tap a year to compare.</p>
+        </div>
+
+        <div class="year-tabs reveal" id="yearTabs" role="tablist" aria-label="Select year to view">
+          <button type="button" class="year-tab active" data-year="2024" role="tab" aria-selected="true">2024</button>
+          <button type="button" class="year-tab" data-year="2020" role="tab" aria-selected="false">2020</button>
+          <button type="button" class="year-tab" data-year="2015" role="tab" aria-selected="false">2015</button>
+        </div>
+
+        <article class="timeline-card reveal">
+          <div class="timeline-grid">
+
+            <div class="timeline-content fade" id="timelineContent">
+              <span class="timeline-tag" id="timelineTag">Year 2024</span>
+              <h3 id="timelineTitle">Rapid Renewable Growth</h3>
+              <p id="timelineText">2024: Renewable energy adoption is accelerating worldwide, with solar and wind leading the charge.</p>
+              <div class="timeline-mini">
+                <div class="mini-stat">
+                  <strong id="mini1Val">+67%</strong>
+                  <span id="mini1Label">Solar Growth</span>
+                </div>
+                <div class="mini-stat">
+                  <strong id="mini2Val">+45%</strong>
+                  <span id="mini2Label">Wind Growth</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="map-visual" id="mapVisual" role="img" aria-label="Animated bubble visual showing regional renewable growth">
+              <div class="region-visual" id="regionVisual">
+                <div class="region-bubble bubble-a">+45%</div>
+                <div class="region-bubble bubble-b">+67%</div>
+                <div class="region-bubble bubble-c">+38%</div>
+                <div class="region-bubble bubble-d">+52%</div>
+                <div class="region-bubble bubble-e">+73%</div>
+                <div class="region-bubble bubble-f">+42%</div>
+              </div>
+              <div class="map-legend" aria-hidden="true">
+                <div class="legend-title">Active Projection</div>
+                <div class="legend-row"><span class="legend-dot green"></span>High Growth Corridors</div>
+                <div class="legend-row"><span class="legend-dot blue"></span>Emerging Markets</div>
+              </div>
+            </div>
+
+          </div>
+          <p class="timeline-foot">Illustrative awareness examples for student project &mdash; not exact figures.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="section section--white" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="cta-banner-text">
+            <h2 id="cta-title">One small step starts the shift</h2>
+            <p>Whether you switch off a light, install a solar panel, or share a single tip with a friend &mdash; every action counts toward SDG 7.</p>
+          </div>
+          <div class="cta-banner-actions">
+            <a href="solutions.html" class="btn-secondary">
+              Take Action
+              <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_forward</span>
+            </a>
+            <a href="contact.html" class="btn-outline">Contact the Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="rg_home_with_year_selector.html" class="logo">
+            <span class="logo-mark"><span class="ms" aria-hidden="true">wb_sunny</span></span>
+            Solaris
+          </a>
+          <p>A student-built awareness website supporting UN Sustainable Development Goal 7: Affordable and Clean Energy for all.</p>
+        </div>
+        <div class="foot-cols">
+          <div class="foot-col">
+            <h4>Site</h4>
+            <ul>
+              <li><a href="rg_home_with_year_selector.html">Home</a></li>
+              <li><a href="about.html">About SDG 7</a></li>
+              <li><a href="solar.html">Solar Energy</a></li>
+              <li><a href="solutions.html">Take Action</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>Project</h4>
+            <ul>
+              <li><a href="about.html">DIT1262 Web Design</a></li>
+              <li><a href="solutions.html#tips">Energy Tips</a></li>
+              <li><a href="solutions.html#calc">Solar Calculator</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>Goal Targets</h4>
+            <ul>
+              <li><a href="about.html#what-is">7.1 Universal Access</a></li>
+              <li><a href="about.html#what-is">7.2 Renewables</a></li>
+              <li><a href="about.html#what-is">7.3 Efficiency</a></li>
+              <li><a href="solar.html">Solar Power</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>&copy; 2026 Solaris. Created for DIT1262 Web Design SDG 7 Group Project.</p>
+        <div class="meta">
+          <span class="ms" aria-hidden="true">wb_sunny</span>
+          Powered by clean solar awareness
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- Year selector logic (isolated IIFE so it cannot be killed by errors elsewhere) -->
+  <script>
+  (function () {
+    'use strict';
+    var yearData = {
+      '2024': {
+        tag:'Year 2024',
+        title:'Rapid Renewable Growth',
+        text:'2024: Renewable energy adoption is accelerating worldwide, with solar and wind leading the charge.',
+        mini:[{val:'+67%',label:'Solar Growth'},{val:'+45%',label:'Wind Growth'}],
+        bubbles:['+45%','+67%','+38%','+52%','+73%','+42%']
+      },
+      '2020': {
+        tag:'Year 2020',
+        title:'Steady Renewable Expansion',
+        text:'2020: Renewable capacity grew despite the pandemic, with solar PV setting new annual records.',
+        mini:[{val:'+35%',label:'Solar Growth'},{val:'+22%',label:'Wind Growth'}],
+        bubbles:['+28%','+35%','+18%','+22%','+42%','+15%']
+      },
+      '2015': {
+        tag:'Year 2015',
+        title:'The SDG 7 Starting Line',
+        text:'2015: The year SDG 7 was adopted. Renewables made up just a small share of the global energy mix.',
+        mini:[{val:'+12%',label:'Solar Growth'},{val:'+8%',label:'Wind Growth'}],
+        bubbles:['+8%','+12%','+5%','+3%','+15%','+2%']
+      }
+    };
+
+    function setText(id, value) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    function updateYear(year) {
+      var data = yearData[year];
+      if (!data) return;
+
+      // Toggle active button
+      document.querySelectorAll('#yearTabs .year-tab').forEach(function (b) {
+        var on = b.getAttribute('data-year') === year;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+
+      // Trigger fade re-animation
+      var content = document.getElementById('timelineContent');
+      if (content) {
+        content.classList.remove('fade');
+        // force reflow
+        void content.offsetWidth;
+        content.classList.add('fade');
+      }
+
+      setText('timelineTag',   data.tag);
+      setText('timelineTitle', data.title);
+      setText('timelineText',  data.text);
+      setText('mini1Val',      data.mini[0].val);
+      setText('mini1Label',    data.mini[0].label);
+      setText('mini2Val',      data.mini[1].val);
+      setText('mini2Label',    data.mini[1].label);
+
+      // Update bubbles with a quick pop animation
+      var bubbles = document.querySelectorAll('#regionVisual .region-bubble');
+      bubbles.forEach(function (bubble, i) {
+        bubble.textContent = data.bubbles[i] || '';
+        bubble.style.transform = 'scale(0.85)';
+        bubble.style.opacity = '0.5';
+        setTimeout(function () {
+          bubble.style.transform = '';
+          bubble.style.opacity = '';
+        }, 140);
+      });
+    }
+
+    function init() {
+      var container = document.getElementById('yearTabs');
+      if (!container) return;
+      container.addEventListener('click', function (e) {
+        var btn = e.target.closest('.year-tab');
+        if (!btn || !container.contains(btn)) return;
+        updateYear(btn.getAttribute('data-year'));
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+</body>
+</html>

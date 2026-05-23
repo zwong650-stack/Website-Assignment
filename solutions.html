@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#0f172a"/>
+  <title>Take Action | Solaris &mdash; Solar Calculator &amp; Energy Tips</title>
+  <meta name="description" content="Practical actions for students, households and communities. Try our solar calculator, follow energy-saving tips, and join the campaign for SDG 7."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="rg_home_with_year_selector.html" class="logo" aria-label="Solaris home">
+        <span class="logo-mark"><span class="ms" aria-hidden="true">wb_sunny</span></span>
+        Solaris
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="rg_home_with_year_selector.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About SDG 7</a>
+        <a href="solar.html" class="nav-link">Solar Energy</a>
+        <a href="solutions.html" class="nav-link active">Take Action</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn-primary" style="font-size:13px;padding:10px 22px;">Join Campaign</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE DRAWER ===== -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <div class="drawer-head">
+      <strong>Menu</strong>
+      <button onclick="closeMenu()" aria-label="Close menu" style="color:#475569;"><span class="ms">close</span></button>
+    </div>
+    <nav class="drawer-nav" aria-label="Mobile primary">
+      <a href="rg_home_with_year_selector.html" onclick="closeMenu()">Home</a>
+      <a href="about.html" onclick="closeMenu()">About SDG 7</a>
+      <a href="solar.html" onclick="closeMenu()">Solar Energy</a>
+      <a href="solutions.html" class="active" onclick="closeMenu()">Take Action</a>
+      <a href="contact.html" onclick="closeMenu()">Contact</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section class="page-hero" aria-labelledby="hero-title">
+      <span class="hero-orb hero-orb-a drifting" aria-hidden="true"></span>
+      <span class="hero-orb hero-orb-b drifting" aria-hidden="true" style="animation-delay:-4s;"></span>
+      <div class="container hero-inner">
+        <p class="crumbs" aria-label="Breadcrumb">
+          <a href="rg_home_with_year_selector.html">Home</a>
+          <span class="ms" aria-hidden="true">chevron_right</span>
+          <span>Take Action</span>
+        </p>
+        <p class="hero-badge"><span class="dot" aria-hidden="true"></span> Practical Solutions</p>
+        <h1 id="hero-title">
+          Small Steps, <span class="accent">Big Impact</span>
+        </h1>
+        <p class="lead">
+          You don't have to install a power plant to help SDG 7. Try the solar calculator,
+          follow the daily tips, and pick at least one action you can start this week.
+        </p>
+        <div class="hero-actions">
+          <a href="#calc" class="btn-primary">
+            Try Solar Calculator
+            <span class="ms" aria-hidden="true" style="font-size:18px;">calculate</span>
+          </a>
+          <a href="#tips" class="btn-ghost">View Energy Tips</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOLAR CALCULATOR ===== -->
+    <section class="section section--white" id="calc" aria-labelledby="calc-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Mock Calculator</p>
+          <h2 class="section-title" id="calc-title">Estimate Your Solar Potential</h2>
+          <p class="section-body">Move the sliders to see roughly how much electricity, savings and CO<sub>2</sub> avoidance a rooftop solar system could deliver. Numbers are illustrative only.</p>
+        </div>
+
+        <form id="calcForm" class="calc-wrap reveal" novalidate>
+          <div class="calc-form">
+            <div class="calc-field">
+              <label for="roofSize">
+                Available roof area
+                <span class="val" id="roofVal">30 m²</span>
+              </label>
+              <input id="roofSize" type="range" min="10" max="120" value="30" step="1" aria-label="Roof area in square metres"/>
+            </div>
+
+            <div class="calc-field">
+              <label for="sunHours">
+                Average daily sunlight
+                <span class="val" id="sunVal">5 hours</span>
+              </label>
+              <input id="sunHours" type="range" min="2" max="8" value="5" step="0.1" aria-label="Average daily peak sunlight hours"/>
+            </div>
+
+            <div class="calc-field">
+              <label for="monthlyBill">
+                Current monthly electricity bill
+                <span class="val" id="billVal">RM 250</span>
+              </label>
+              <input id="monthlyBill" type="range" min="50" max="800" value="250" step="10" aria-label="Monthly electricity bill in RM"/>
+            </div>
+
+            <div class="calc-field">
+              <label for="locationFactor">Region efficiency factor</label>
+              <select id="locationFactor" aria-label="Region efficiency factor">
+                <option value="1.05">Equatorial / sunny tropics (Malaysia, Indonesia)</option>
+                <option value="0.95">Temperate (Europe, Northern Asia)</option>
+                <option value="0.85">Cloudy / high-latitude (UK, Northern Europe)</option>
+                <option value="1.10">Desert / very high irradiance</option>
+              </select>
+            </div>
+          </div>
+
+          <aside class="calc-results" aria-live="polite">
+            <div class="calc-out">
+              <span class="lbl">Estimated panels needed</span>
+              <span class="num" id="outPanels">17</span>
+            </div>
+            <div class="calc-out">
+              <span class="lbl">Monthly generation</span>
+              <span class="num"><span id="outKwh">1,071</span><small>kWh</small></span>
+            </div>
+            <div class="calc-out">
+              <span class="lbl">Estimated monthly savings</span>
+              <span class="num"><small>RM </small><span id="outSavings">250</span></span>
+            </div>
+            <div class="calc-out">
+              <span class="lbl">CO<sub>2</sub> avoided per month</span>
+              <span class="num"><span id="outCO2">750</span><small>kg</small></span>
+            </div>
+            <p class="calc-note">Estimates assume a 400&thinsp;W panel, 1.7 m² per panel, and a tariff of RM 0.35/kWh. Real systems vary by roof orientation, shading, and inverter efficiency.</p>
+          </aside>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== ACTION TIMELINE ===== -->
+    <section class="section section--surface" id="steps" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Get Started</p>
+          <h2 class="section-title" id="steps-title">Five Steps Anyone Can Take</h2>
+          <p class="section-body">A simple roadmap from awareness to action. Pick the steps that match your situation.</p>
+        </div>
+
+        <ol class="timeline reveal" style="max-width:880px; margin:0 auto;">
+          <li class="t-item">
+            <span class="step">Step 01 &middot; Learn</span>
+            <h3>Understand SDG 7 and your own usage</h3>
+            <p>Spend 15 minutes reading our About SDG 7 page and check your last electricity bill. Knowing where you start makes every other step measurable.</p>
+          </li>
+          <li class="t-item">
+            <span class="step">Step 02 &middot; Save</span>
+            <h3>Cut waste at home this week</h3>
+            <p>Switch off standby devices, use daylight, set the AC to 24°C, and replace one bulb with an LED. These changes alone often cut bills by 10&ndash;15%.</p>
+          </li>
+          <li class="t-item">
+            <span class="step">Step 03 &middot; Switch</span>
+            <h3>Choose efficient appliances</h3>
+            <p>When something needs replacing, look for a high energy-rating label. The price difference pays itself back in less than two years for most large appliances.</p>
+          </li>
+          <li class="t-item">
+            <span class="step">Step 04 &middot; Solar</span>
+            <h3>Explore solar for your home or community</h3>
+            <p>Get a quick quote from a local installer. Even renters can support the shift by joining community-solar programmes or asking landlords about rooftop access.</p>
+          </li>
+          <li class="t-item">
+            <span class="step">Step 05 &middot; Share</span>
+            <h3>Spread awareness</h3>
+            <p>Share this site, talk to friends and family, run an awareness booth at school, or contact us to join the Solaris student campaign.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== ENERGY TIPS ===== -->
+    <section class="section section--white" id="tips" aria-labelledby="tips-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Daily Habits</p>
+          <h2 class="section-title" id="tips-title">Energy-Saving Tips That Add Up</h2>
+          <p class="section-body">Eight small habits anyone can apply at home, school, or work. Each one cuts waste and supports SDG 7.</p>
+        </div>
+
+        <div class="tips-grid">
+          <article class="tip-card reveal d1">
+            <div class="tip-num">01</div>
+            <div>
+              <h3>Switch off when not in use</h3>
+              <p>Turn off lights, fans, and electronics when leaving a room to avoid wasting electricity.</p>
+            </div>
+          </article>
+          <article class="tip-card reveal d2">
+            <div class="tip-num">02</div>
+            <div>
+              <h3>Use natural daylight</h3>
+              <p>Open curtains and use sunlight during the day instead of switching on indoor lights.</p>
+            </div>
+          </article>
+          <article class="tip-card reveal d3">
+            <div class="tip-num">03</div>
+            <div>
+              <h3>Unplug after use</h3>
+              <p>Unplug chargers and small appliances when not needed to stop "phantom" energy use.</p>
+            </div>
+          </article>
+          <article class="tip-card reveal d4">
+            <div class="tip-num">04</div>
+            <div>
+              <h3>Choose efficient devices</h3>
+              <p>Pick energy-efficient bulbs and appliances &mdash; they use less power and last longer.</p>
+            </div>
+          </article>
+          <article class="tip-card reveal d5">
+            <div class="tip-num">05</div>
+            <div>
+              <h3>Use AC wisely</h3>
+              <p>Set air-conditioning to a moderate 24°C and clean filters regularly for efficient cooling.</p>
+            </div>
+          </article>
+          <article class="tip-card reveal d6">
+            <div class="tip-num">06</div>
+            <div>
+              <h3>Wash full loads</h3>
+              <p>Run washing machines and dishwashers only on full loads to maximise water and energy use.</p>
+            </div>
+          </article>
+          <article class="tip-card reveal d1">
+            <div class="tip-num">07</div>
+            <div>
+              <h3>Cool food before fridging</h3>
+              <p>Let hot food reach room temperature before storing &mdash; the fridge then uses less energy.</p>
+            </div>
+          </article>
+          <article class="tip-card reveal d2">
+            <div class="tip-num">08</div>
+            <div>
+              <h3>Support renewable energy</h3>
+              <p>Choose, share, or support solar, wind and other clean energy solutions where available.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TARGET AUDIENCE ACTIONS ===== -->
+    <section class="section section--surface" id="audiences" aria-labelledby="audiences-title">
+      <div class="container">
+        <div class="center-head reveal">
+          <p class="sec-label center">Who Can Do What</p>
+          <h2 class="section-title" id="audiences-title">Action Plans by Audience</h2>
+          <p class="section-body">Pick the lane that fits you best.</p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card t-info reveal d1">
+            <div class="card-icon"><span class="ms" aria-hidden="true">school</span></div>
+            <h3>For Students</h3>
+            <p>Learn the targets, share posts, run an awareness campaign at college, propose an SDG-7 club, and choose energy-related topics for projects when you can.</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Free, low-effort, high-reach.</div>
+          </article>
+          <article class="card t-green reveal d2">
+            <div class="card-icon"><span class="ms" aria-hidden="true">home</span></div>
+            <h3>For Households</h3>
+            <p>Audit your bill, swap to LEDs, get a smart power strip, and request a rooftop-solar quote. Small investments pay back fast and cut emissions for years.</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Real bill savings within months.</div>
+          </article>
+          <article class="card t-solar reveal d3">
+            <div class="card-icon"><span class="ms" aria-hidden="true">groups</span></div>
+            <h3>For Communities</h3>
+            <p>Push for community-solar projects, lobby for clearer rooftop policies, organise neighbourhood awareness sessions, and partner with local schools and shops.</p>
+            <div class="card-meta"><span class="ms" aria-hidden="true">arrow_forward</span> Compound impact, lasting change.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section section--white" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="cta-banner-text">
+            <h2 id="cta-title">Want to be part of the Solaris campaign?</h2>
+            <p>Drop us a message &mdash; tell us your idea, your school project, or just say hello. Our student team replies as soon as we can.</p>
+          </div>
+          <div class="cta-banner-actions">
+            <a href="contact.html" class="btn-secondary">
+              Contact the Team
+              <span class="ms" aria-hidden="true" style="font-size:18px;">arrow_forward</span>
+            </a>
+            <a href="solar.html" class="btn-outline">Read Solar Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="rg_home_with_year_selector.html" class="logo">
+            <span class="logo-mark"><span class="ms" aria-hidden="true">wb_sunny</span></span>
+            Solaris
+          </a>
+          <p>A student-built awareness website supporting UN Sustainable Development Goal 7: Affordable and Clean Energy for all.</p>
+        </div>
+        <div class="foot-cols">
+          <div class="foot-col">
+            <h4>Site</h4>
+            <ul>
+              <li><a href="rg_home_with_year_selector.html">Home</a></li>
+              <li><a href="about.html">About SDG 7</a></li>
+              <li><a href="solar.html">Solar Energy</a></li>
+              <li><a href="solutions.html">Take Action</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>This Page</h4>
+            <ul>
+              <li><a href="#calc">Solar Calculator</a></li>
+              <li><a href="#steps">Five Steps</a></li>
+              <li><a href="#tips">Energy Tips</a></li>
+              <li><a href="#audiences">By Audience</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>Goal Targets</h4>
+            <ul>
+              <li><a href="about.html#what-is">7.1 Universal Access</a></li>
+              <li><a href="about.html#what-is">7.2 Renewables</a></li>
+              <li><a href="about.html#what-is">7.3 Efficiency</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>&copy; 2026 Solaris. Created for DIT1262 Web Design SDG 7 Group Project.</p>
+        <div class="meta">
+          <span class="ms" aria-hidden="true">wb_sunny</span>
+          Powered by clean solar awareness
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
